@@ -11,7 +11,7 @@ const fetchWeb = async function handler(req: VercelRequest, res: VercelResponse)
         const $ = load(response.data);
 
         // Extract the <table> tag
-        const table = $('table').html();
+        const table = "<table>" + $('table').html() + "</table>";
 
         // Set CORS headers
         res.setHeader('Access-Control-Allow-Origin', '*');
